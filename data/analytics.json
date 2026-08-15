@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "path": "/en/properties/prop-5",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786827554692-5ylm1",
+      "timestamp": "2026-08-15T20:59:14.692Z"
+    },
+    {
+      "path": "/en/properties",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786827550991-j96x3",
+      "timestamp": "2026-08-15T20:59:10.991Z"
+    },
+    {
+      "path": "/en",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786827525265-3gfi6",
+      "timestamp": "2026-08-15T20:58:45.265Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1786827496853-nrykj",
+      "timestamp": "2026-08-15T20:58:16.853Z"
+    },
+    {
+      "id": "v-1",
+      "path": "/en",
+      "device": "desktop",
+      "language": "en",
+      "referrer": "google.com",
+      "timestamp": "2026-08-15T18:58:16.842Z"
+    },
+    {
+      "id": "v-2",
+      "path": "/ar",
+      "device": "mobile",
+      "language": "ar",
+      "referrer": "whatsapp",
+      "timestamp": "2026-08-15T16:58:16.842Z"
+    },
+    {
+      "id": "v-3",
+      "path": "/en/properties/prop-1",
+      "propertyId": "prop-1",
+      "referenceNumber": "REF-ABD-101",
+      "device": "desktop",
+      "language": "en",
+      "referrer": "direct",
+      "timestamp": "2026-08-15T15:58:16.842Z"
+    },
+    {
+      "id": "v-4",
+      "path": "/ar/properties/prop-2",
+      "propertyId": "prop-2",
+      "referenceNumber": "REF-DAB-202",
+      "device": "mobile",
+      "language": "ar",
+      "referrer": "google.com",
+      "timestamp": "2026-08-15T13:58:16.842Z"
+    },
+    {
+      "id": "v-5",
+      "path": "/ar/properties/prop-3",
+      "propertyId": "prop-3",
+      "referenceNumber": "REF-BLV-303",
+      "device": "mobile",
+      "language": "ar",
+      "referrer": "instagram",
+      "timestamp": "2026-08-15T10:58:16.842Z"
+    }
+  ]
+}

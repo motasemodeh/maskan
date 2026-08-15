@@ -1,0 +1,17 @@
+{
+  "companyName": {
+    "en": "Maskan | مسكن",
+    "ar": "مسكن | Maskan"
+  },
+  "phone": "+962 7 9000 0000",
+  "whatsapp": "+962790000000",
+  "email": "leasing@maskan.jo",
+  "defaultCurrency": "JOD",
+  "gaMeasurementId": "G-XXXXXXXXXX",
+  "address": {
+    "en": "5th Circle, Zahran Street, Amman, Jordan",
+    "ar": "الدوار الخامس، شارع زهران، عمّان، الأردن"
+  },
+  "heroVideoUrl": "https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-interior-design-41074-large.mp4",
+  "heroVideoPoster": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80"
+}
