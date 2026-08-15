@@ -5,6 +5,14 @@
       "referrer": "http://localhost:3000/en/properties/prop-5",
       "device": "desktop",
       "language": "en",
+      "id": "v-1786828879596-y8mgy",
+      "timestamp": "2026-08-15T21:21:19.596Z"
+    },
+    {
+      "path": "/en/properties/prop-5",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
       "id": "v-1786828314044-276n7",
       "timestamp": "2026-08-15T21:11:54.044Z"
     },
