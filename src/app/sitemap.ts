@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getProperties } from '@/lib/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://elysianliving.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://maskan.jo';
   const properties = await getProperties(true); // only available
 
   const staticRoutes = ['', '/properties'];
