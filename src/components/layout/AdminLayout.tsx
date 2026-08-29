@@ -15,7 +15,9 @@ import {
   Menu,
   X,
   Plus,
-  ShieldAlert
+  ShieldAlert,
+  Inbox,
+  MapPin
 } from 'lucide-react';
 import { Locale } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
@@ -49,6 +51,18 @@ export function AdminLayout({ locale, dict, children, title, actionButton }: Adm
       exact: false,
       label: dict.admin.properties,
       icon: Building,
+    },
+    {
+      href: `/${locale}/admin/locations`,
+      exact: false,
+      label: dict.admin.locations,
+      icon: MapPin,
+    },
+    {
+      href: `/${locale}/admin/rental-requests`,
+      exact: false,
+      label: dict.admin.rentalRequests,
+      icon: Inbox,
     },
     {
       href: `/${locale}/admin/analytics`,

@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Phone, MessageCircle, Menu, X, Building2, ShieldCheck } from 'lucide-react';
+import { Phone, Menu, X, Building2, ShieldCheck } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { Locale, SiteSettings } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
@@ -125,7 +126,7 @@ export function Header({ locale, dict, settings }: HeaderProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-md shadow-[#25D366]/20 transition-all hover:scale-105"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>{dict.nav.whatsapp}</span>
             </a>
 
@@ -192,7 +193,7 @@ export function Header({ locale, dict, settings }: HeaderProps) {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-bold shadow-lg"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>{dict.nav.whatsapp}</span>
             </a>
           </div>

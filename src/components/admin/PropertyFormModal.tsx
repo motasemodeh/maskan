@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import {
   X,
@@ -16,7 +16,7 @@ import {
   Layers,
   FileText
 } from 'lucide-react';
-import { Property, Locale, FurnishedStatus, PropertyType, PropertyStatus } from '@/lib/types';
+import { Property, Locale, FurnishedStatus, PropertyType, PropertyStatus, City } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
 
 interface PropertyFormModalProps {
@@ -70,8 +70,34 @@ export function PropertyFormModal({
   const [descAr, setDescAr] = useState(initialData?.description?.ar || '');
   const [locationEn, setLocationEn] = useState(initialData?.location?.en || '');
   const [locationAr, setLocationAr] = useState(initialData?.location?.ar || '');
-  const [city, setCity] = useState(initialData?.location?.city || 'Dubai');
-  const [district, setDistrict] = useState(initialData?.location?.district || '');
+  const [city, setCity] = useState(initialData?.location?.city || '');
+  const [cities, setCities] = useState<City[]>([]);
+
+  // Cities & areas are managed in the admin "Cities & Areas" screen
+  useEffect(() => {
+    if (!isOpen) return;
+    let active = true;
+
+    fetch('/api/locations')
+      .then((res) => res.json())
+      .then((data) => {
+        if (active && data?.success) setCities(data.data as City[]);
+      })
+      .catch(() => {
+        /* keep manual entry available */
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [isOpen]);
+
+  const selectedCity = useMemo(
+    () => cities.find((c) => c.name.en === city || c.name.ar === city),
+    [cities, city]
+  );
+  const districtOptions = selectedCity?.districts ?? [];
+  const hasCities = cities.length > 0;
 
   const [price, setPrice] = useState<string>(initialData?.price ? String(initialData.price) : '');
   const [currency, setCurrency] = useState(initialData?.currency || 'JOD');
@@ -292,7 +318,7 @@ export function PropertyFormModal({
           {/* TAB 1: DETAILS & LOCATION */}
           {activeTab === 'details' && (
             <div className="space-y-5 animate-fade-in">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-[#443e35] uppercase mb-1.5">
                     {dict.admin.formRef} *
@@ -309,12 +335,57 @@ export function PropertyFormModal({
                   <label className="block text-xs font-bold text-[#443e35] uppercase mb-1.5">
                     {dict.admin.formCity}
                   </label>
-                  <input
-                    type="text"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#f8f6f1] border border-[#ded7ca] text-sm text-[#11161d] focus:border-[#c5a880] focus:bg-white"
-                  />
+                  {hasCities ? (
+                    <select
+                      value={city}
+                      onChange={(e) => {
+                        setCity(e.target.value);
+                        setDistrict('');
+                      }}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#f8f6f1] border border-[#ded7ca] text-sm text-[#11161d] focus:border-[#c5a880] focus:bg-white cursor-pointer"
+                    >
+                      <option value="">{dict.admin.selectCity}</option>
+                      {cities.map((c) => (
+                        <option key={c.id} value={c.name.en}>
+                          {isAr ? `${c.name.ar} - ${c.name.en}` : c.name.en}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type="text"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#f8f6f1] border border-[#ded7ca] text-sm text-[#11161d] focus:border-[#c5a880] focus:bg-white"
+                    />
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-[#443e35] uppercase mb-1.5">
+                    {dict.admin.formDistrict}
+                  </label>
+                  {districtOptions.length > 0 ? (
+                    <select
+                      value={district}
+                      onChange={(e) => setDistrict(e.target.value)}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#f8f6f1] border border-[#ded7ca] text-sm text-[#11161d] focus:border-[#c5a880] focus:bg-white cursor-pointer"
+                    >
+                      <option value="">{dict.admin.selectDistrict}</option>
+                      {districtOptions.map((d) => (
+                        <option key={d.id} value={d.name.en}>
+                          {isAr ? `${d.name.ar} - ${d.name.en}` : d.name.en}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type="text"
+                      value={district}
+                      onChange={(e) => setDistrict(e.target.value)}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#f8f6f1] border border-[#ded7ca] text-sm text-[#11161d] focus:border-[#c5a880] focus:bg-white"
+                    />
+                  )}
                 </div>
               </div>
 

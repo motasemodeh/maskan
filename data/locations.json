@@ -1,0 +1,399 @@
+{
+  "cities": [
+    {
+      "id": "city-amman",
+      "name": {
+        "en": "Amman",
+        "ar": "عمّان"
+      },
+      "districts": [
+        {
+          "id": "d-abdoun",
+          "name": {
+            "en": "Abdoun",
+            "ar": "عبدون"
+          }
+        },
+        {
+          "id": "d-deir-ghbar",
+          "name": {
+            "en": "Deir Ghbar",
+            "ar": "دير غبار"
+          }
+        },
+        {
+          "id": "d-um-uthaina",
+          "name": {
+            "en": "Um Uthaina",
+            "ar": "أم أذينة"
+          }
+        },
+        {
+          "id": "d-sweifieh",
+          "name": {
+            "en": "Sweifieh",
+            "ar": "الصويفية"
+          }
+        },
+        {
+          "id": "d-khalda",
+          "name": {
+            "en": "Khalda",
+            "ar": "خلدا"
+          }
+        },
+        {
+          "id": "d-dabouq",
+          "name": {
+            "en": "Dabouq",
+            "ar": "دابوق"
+          }
+        },
+        {
+          "id": "d-tlaa-al-ali",
+          "name": {
+            "en": "Tla' Al Ali",
+            "ar": "تلاع العلي"
+          }
+        },
+        {
+          "id": "d-shmeisani",
+          "name": {
+            "en": "Shmeisani",
+            "ar": "الشميساني"
+          }
+        },
+        {
+          "id": "d-jabal-amman",
+          "name": {
+            "en": "Jabal Amman",
+            "ar": "جبل عمّان"
+          }
+        },
+        {
+          "id": "d-abdali",
+          "name": {
+            "en": "Al Abdali",
+            "ar": "العبدلي"
+          }
+        },
+        {
+          "id": "d-rabieh",
+          "name": {
+            "en": "Al Rabieh",
+            "ar": "الرابية"
+          }
+        },
+        {
+          "id": "d-jubeiha",
+          "name": {
+            "en": "Al Jubeiha",
+            "ar": "الجبيهة"
+          }
+        },
+        {
+          "id": "d-marj-al-hamam",
+          "name": {
+            "en": "Marj Al Hamam",
+            "ar": "مرج الحمام"
+          }
+        },
+        {
+          "id": "d-airport-road",
+          "name": {
+            "en": "Airport Road",
+            "ar": "طريق المطار"
+          }
+        },
+        {
+          "id": "d-tabarbour",
+          "name": {
+            "en": "Tabarbour",
+            "ar": "طبربور"
+          }
+        },
+        {
+          "id": "d-shafa-badran",
+          "name": {
+            "en": "Shafa Badran",
+            "ar": "شفا بدران"
+          }
+        },
+        {
+          "id": "d-jabal-al-hussein",
+          "name": {
+            "en": "Jabal Al Hussein",
+            "ar": "جبل الحسين"
+          }
+        },
+        {
+          "id": "d-wadi-saqra",
+          "name": {
+            "en": "Wadi Saqra",
+            "ar": "وادي صقرة"
+          }
+        },
+        {
+          "id": "d-daheit-al-rashid",
+          "name": {
+            "en": "Dahiat Al Rashid",
+            "ar": "ضاحية الرشيد"
+          }
+        },
+        {
+          "id": "d-naour",
+          "name": {
+            "en": "Naour",
+            "ar": "ناعور"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-irbid",
+      "name": {
+        "en": "Irbid",
+        "ar": "إربد"
+      },
+      "districts": [
+        {
+          "id": "d-irbid-center",
+          "name": {
+            "en": "Irbid City Center",
+            "ar": "وسط إربد"
+          }
+        },
+        {
+          "id": "d-university-street",
+          "name": {
+            "en": "University Street",
+            "ar": "شارع الجامعة"
+          }
+        },
+        {
+          "id": "d-al-hussun",
+          "name": {
+            "en": "Al Husn",
+            "ar": "الحصن"
+          }
+        },
+        {
+          "id": "d-al-ramtha",
+          "name": {
+            "en": "Ar Ramtha",
+            "ar": "الرمثا"
+          }
+        },
+        {
+          "id": "d-idoon",
+          "name": {
+            "en": "Idoon",
+            "ar": "إيدون"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-zarqa",
+      "name": {
+        "en": "Zarqa",
+        "ar": "الزرقاء"
+      },
+      "districts": [
+        {
+          "id": "d-new-zarqa",
+          "name": {
+            "en": "New Zarqa",
+            "ar": "الزرقاء الجديدة"
+          }
+        },
+        {
+          "id": "d-russeifa",
+          "name": {
+            "en": "Russeifa",
+            "ar": "الرصيفة"
+          }
+        },
+        {
+          "id": "d-hashemiyya",
+          "name": {
+            "en": "Al Hashimiyya",
+            "ar": "الهاشمية"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-aqaba",
+      "name": {
+        "en": "Aqaba",
+        "ar": "العقبة"
+      },
+      "districts": [
+        {
+          "id": "d-aqaba-center",
+          "name": {
+            "en": "Aqaba City Center",
+            "ar": "وسط العقبة"
+          }
+        },
+        {
+          "id": "d-tala-bay",
+          "name": {
+            "en": "Tala Bay",
+            "ar": "تالا باي"
+          }
+        },
+        {
+          "id": "d-south-beach",
+          "name": {
+            "en": "South Beach",
+            "ar": "الشاطئ الجنوبي"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-salt",
+      "name": {
+        "en": "As-Salt",
+        "ar": "السلط"
+      },
+      "districts": [
+        {
+          "id": "d-salt-center",
+          "name": {
+            "en": "Salt City Center",
+            "ar": "وسط السلط"
+          }
+        },
+        {
+          "id": "d-ain-albasha",
+          "name": {
+            "en": "Ain Al-Basha",
+            "ar": "عين الباشا"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-madaba",
+      "name": {
+        "en": "Madaba",
+        "ar": "مأدبا"
+      },
+      "districts": [
+        {
+          "id": "d-madaba-center",
+          "name": {
+            "en": "Madaba City Center",
+            "ar": "وسط مأدبا"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-jerash",
+      "name": {
+        "en": "Jerash",
+        "ar": "جرش"
+      },
+      "districts": [
+        {
+          "id": "d-jerash-center",
+          "name": {
+            "en": "Jerash City Center",
+            "ar": "وسط جرش"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-ajloun",
+      "name": {
+        "en": "Ajloun",
+        "ar": "عجلون"
+      },
+      "districts": [
+        {
+          "id": "d-ajloun-center",
+          "name": {
+            "en": "Ajloun City Center",
+            "ar": "وسط عجلون"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-mafraq",
+      "name": {
+        "en": "Mafraq",
+        "ar": "المفرق"
+      },
+      "districts": [
+        {
+          "id": "d-mafraq-center",
+          "name": {
+            "en": "Mafraq City Center",
+            "ar": "وسط المفرق"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-karak",
+      "name": {
+        "en": "Karak",
+        "ar": "الكرك"
+      },
+      "districts": [
+        {
+          "id": "d-karak-center",
+          "name": {
+            "en": "Karak City Center",
+            "ar": "وسط الكرك"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-tafilah",
+      "name": {
+        "en": "Tafilah",
+        "ar": "الطفيلة"
+      },
+      "districts": [
+        {
+          "id": "d-tafilah-center",
+          "name": {
+            "en": "Tafilah City Center",
+            "ar": "وسط الطفيلة"
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-maan",
+      "name": {
+        "en": "Ma'an",
+        "ar": "معان"
+      },
+      "districts": [
+        {
+          "id": "d-maan-center",
+          "name": {
+            "en": "Ma'an City Center",
+            "ar": "وسط معان"
+          }
+        },
+        {
+          "id": "d-petra",
+          "name": {
+            "en": "Petra (Wadi Musa)",
+            "ar": "البتراء (وادي موسى)"
+          }
+        }
+      ]
+    }
+  ]
+}

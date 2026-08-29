@@ -1,19 +1,21 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { Property, SiteSettings, AnalyticsRecord, AnalyticsSummary, PropertyStatus, PropertyFilterParams } from './types';
+import { Property, SiteSettings, AnalyticsRecord, AnalyticsSummary, PropertyStatus, PropertyFilterParams, RentalRequest, RentalRequestStatus, City, District } from './types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const PROPERTIES_FILE = path.join(DATA_DIR, 'properties.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 const ANALYTICS_FILE = path.join(DATA_DIR, 'analytics.json');
+const RENTAL_REQUESTS_FILE = path.join(DATA_DIR, 'rental-requests.json');
+const LOCATIONS_FILE = path.join(DATA_DIR, 'locations.json');
 
 const DEFAULT_SETTINGS: SiteSettings = {
   companyName: {
     en: "Dar & Miftah | دار ومفتاح",
     ar: "دار ومفتاح | Dar & Miftah"
   },
-  phone: "+962 7 9000 0000",
-  whatsapp: "+962790000000",
+  phone: "+962 7 9981 7260",
+  whatsapp: "+962799817260",
   email: "leasing@darmiftah.jo",
   defaultCurrency: "JOD",
   gaMeasurementId: "G-XXXXXXXXXX",
@@ -535,4 +537,297 @@ export async function getAnalyticsSummary(): Promise<AnalyticsSummary> {
     recentViews: records.slice(0, 15),
     dailyViews
   };
+}
+
+/* ==========================================================
+   RENTAL REQUESTS (owners submitting their home for listing)
+   Stored locally in data/rental-requests.json - no email sent.
+   ========================================================== */
+
+export async function getRentalRequests(): Promise<RentalRequest[]> {
+  await ensureDirectory();
+  try {
+    const data = await fs.readFile(RENTAL_REQUESTS_FILE, 'utf-8');
+    const parsed = JSON.parse(data);
+    const requests: RentalRequest[] = parsed.requests || [];
+    return requests.sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+  } catch {
+    await fs.writeFile(RENTAL_REQUESTS_FILE, JSON.stringify({ requests: [] }, null, 2), 'utf-8');
+    return [];
+  }
+}
+
+async function saveRentalRequests(requests: RentalRequest[]): Promise<void> {
+  await ensureDirectory();
+  await fs.writeFile(RENTAL_REQUESTS_FILE, JSON.stringify({ requests }, null, 2), 'utf-8');
+}
+
+export async function createRentalRequest(
+  input: Pick<RentalRequest, 'fullName' | 'phone' | 'area' | 'district'> & { notes?: string }
+): Promise<RentalRequest> {
+  const requests = await getRentalRequests();
+
+  const newRequest: RentalRequest = {
+    id: `req-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+    fullName: input.fullName.trim(),
+    phone: input.phone.trim(),
+    area: input.area.trim(),
+    district: input.district.trim(),
+    notes: input.notes?.trim() || undefined,
+    status: 'new',
+    createdAt: new Date().toISOString(),
+  };
+
+  requests.unshift(newRequest);
+  await saveRentalRequests(requests);
+  return newRequest;
+}
+
+export async function updateRentalRequestStatus(
+  id: string,
+  status: RentalRequestStatus
+): Promise<RentalRequest | null> {
+  const requests = await getRentalRequests();
+  const index = requests.findIndex((r) => r.id === id);
+  if (index === -1) return null;
+
+  requests[index] = { ...requests[index], status };
+  await saveRentalRequests(requests);
+  return requests[index];
+}
+
+export async function deleteRentalRequest(id: string): Promise<boolean> {
+  const requests = await getRentalRequests();
+  const filtered = requests.filter((r) => r.id !== id);
+  if (filtered.length === requests.length) return false;
+  await saveRentalRequests(filtered);
+  return true;
+}
+
+/* ==========================================================
+   CITIES & AREAS (managed from the admin panel)
+   Stored in data/locations.json
+   ========================================================== */
+
+const SEED_CITIES: City[] = [
+  {
+    id: 'city-amman',
+    name: { en: 'Amman', ar: 'عمّان' },
+    districts: [
+      { id: 'd-abdoun', name: { en: 'Abdoun', ar: 'عبدون' } },
+      { id: 'd-deir-ghbar', name: { en: 'Deir Ghbar', ar: 'دير غبار' } },
+      { id: 'd-um-uthaina', name: { en: 'Um Uthaina', ar: 'أم أذينة' } },
+      { id: 'd-sweifieh', name: { en: 'Sweifieh', ar: 'الصويفية' } },
+      { id: 'd-khalda', name: { en: 'Khalda', ar: 'خلدا' } },
+      { id: 'd-dabouq', name: { en: 'Dabouq', ar: 'دابوق' } },
+      { id: 'd-tlaa-al-ali', name: { en: "Tla' Al Ali", ar: 'تلاع العلي' } },
+      { id: 'd-shmeisani', name: { en: 'Shmeisani', ar: 'الشميساني' } },
+      { id: 'd-jabal-amman', name: { en: 'Jabal Amman', ar: 'جبل عمّان' } },
+      { id: 'd-abdali', name: { en: 'Al Abdali', ar: 'العبدلي' } },
+      { id: 'd-rabieh', name: { en: 'Al Rabieh', ar: 'الرابية' } },
+      { id: 'd-jubeiha', name: { en: 'Al Jubeiha', ar: 'الجبيهة' } },
+      { id: 'd-marj-al-hamam', name: { en: 'Marj Al Hamam', ar: 'مرج الحمام' } },
+      { id: 'd-airport-road', name: { en: 'Airport Road', ar: 'طريق المطار' } },
+      { id: 'd-tabarbour', name: { en: 'Tabarbour', ar: 'طبربور' } },
+      { id: 'd-shafa-badran', name: { en: 'Shafa Badran', ar: 'شفا بدران' } },
+      { id: 'd-jabal-al-hussein', name: { en: 'Jabal Al Hussein', ar: 'جبل الحسين' } },
+      { id: 'd-wadi-saqra', name: { en: 'Wadi Saqra', ar: 'وادي صقرة' } },
+      { id: 'd-daheit-al-rashid', name: { en: 'Dahiat Al Rashid', ar: 'ضاحية الرشيد' } },
+      { id: 'd-naour', name: { en: 'Naour', ar: 'ناعور' } },
+    ],
+  },
+  {
+    id: 'city-irbid',
+    name: { en: 'Irbid', ar: 'إربد' },
+    districts: [
+      { id: 'd-irbid-center', name: { en: 'Irbid City Center', ar: 'وسط إربد' } },
+      { id: 'd-university-street', name: { en: 'University Street', ar: 'شارع الجامعة' } },
+      { id: 'd-al-hussun', name: { en: 'Al Husn', ar: 'الحصن' } },
+      { id: 'd-al-ramtha', name: { en: 'Ar Ramtha', ar: 'الرمثا' } },
+      { id: 'd-idoon', name: { en: 'Idoon', ar: 'إيدون' } },
+    ],
+  },
+  {
+    id: 'city-zarqa',
+    name: { en: 'Zarqa', ar: 'الزرقاء' },
+    districts: [
+      { id: 'd-new-zarqa', name: { en: 'New Zarqa', ar: 'الزرقاء الجديدة' } },
+      { id: 'd-russeifa', name: { en: 'Russeifa', ar: 'الرصيفة' } },
+      { id: 'd-hashemiyya', name: { en: 'Al Hashimiyya', ar: 'الهاشمية' } },
+    ],
+  },
+  {
+    id: 'city-aqaba',
+    name: { en: 'Aqaba', ar: 'العقبة' },
+    districts: [
+      { id: 'd-aqaba-center', name: { en: 'Aqaba City Center', ar: 'وسط العقبة' } },
+      { id: 'd-tala-bay', name: { en: 'Tala Bay', ar: 'تالا باي' } },
+      { id: 'd-south-beach', name: { en: 'South Beach', ar: 'الشاطئ الجنوبي' } },
+    ],
+  },
+  {
+    id: 'city-salt',
+    name: { en: 'As-Salt', ar: 'السلط' },
+    districts: [
+      { id: 'd-salt-center', name: { en: 'Salt City Center', ar: 'وسط السلط' } },
+      { id: 'd-ain-albasha', name: { en: 'Ain Al-Basha', ar: 'عين الباشا' } },
+    ],
+  },
+  {
+    id: 'city-madaba',
+    name: { en: 'Madaba', ar: 'مأدبا' },
+    districts: [
+      { id: 'd-madaba-center', name: { en: 'Madaba City Center', ar: 'وسط مأدبا' } },
+    ],
+  },
+  {
+    id: 'city-jerash',
+    name: { en: 'Jerash', ar: 'جرش' },
+    districts: [
+      { id: 'd-jerash-center', name: { en: 'Jerash City Center', ar: 'وسط جرش' } },
+    ],
+  },
+  {
+    id: 'city-ajloun',
+    name: { en: 'Ajloun', ar: 'عجلون' },
+    districts: [
+      { id: 'd-ajloun-center', name: { en: 'Ajloun City Center', ar: 'وسط عجلون' } },
+    ],
+  },
+  {
+    id: 'city-mafraq',
+    name: { en: 'Mafraq', ar: 'المفرق' },
+    districts: [
+      { id: 'd-mafraq-center', name: { en: 'Mafraq City Center', ar: 'وسط المفرق' } },
+    ],
+  },
+  {
+    id: 'city-karak',
+    name: { en: 'Karak', ar: 'الكرك' },
+    districts: [
+      { id: 'd-karak-center', name: { en: 'Karak City Center', ar: 'وسط الكرك' } },
+    ],
+  },
+  {
+    id: 'city-tafilah',
+    name: { en: 'Tafilah', ar: 'الطفيلة' },
+    districts: [
+      { id: 'd-tafilah-center', name: { en: 'Tafilah City Center', ar: 'وسط الطفيلة' } },
+    ],
+  },
+  {
+    id: 'city-maan',
+    name: { en: "Ma'an", ar: 'معان' },
+    districts: [
+      { id: 'd-maan-center', name: { en: "Ma'an City Center", ar: 'وسط معان' } },
+      { id: 'd-petra', name: { en: 'Petra (Wadi Musa)', ar: 'البتراء (وادي موسى)' } },
+    ],
+  },
+];
+
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\u0600-\u06FF]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 40);
+}
+
+export async function getCities(): Promise<City[]> {
+  await ensureDirectory();
+  try {
+    const data = await fs.readFile(LOCATIONS_FILE, 'utf-8');
+    const parsed = JSON.parse(data);
+    return parsed.cities || [];
+  } catch {
+    await fs.writeFile(LOCATIONS_FILE, JSON.stringify({ cities: SEED_CITIES }, null, 2), 'utf-8');
+    return SEED_CITIES;
+  }
+}
+
+export async function saveCities(cities: City[]): Promise<void> {
+  await ensureDirectory();
+  await fs.writeFile(LOCATIONS_FILE, JSON.stringify({ cities }, null, 2), 'utf-8');
+}
+
+export async function createCity(name: { en: string; ar: string }): Promise<City> {
+  const cities = await getCities();
+
+  const newCity: City = {
+    id: `city-${slugify(name.en) || Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+    name: { en: name.en.trim(), ar: name.ar.trim() },
+    districts: [],
+  };
+
+  cities.push(newCity);
+  await saveCities(cities);
+  return newCity;
+}
+
+export async function updateCity(id: string, updates: Partial<Omit<City, 'id'>>): Promise<City | null> {
+  const cities = await getCities();
+  const index = cities.findIndex((c) => c.id === id);
+  if (index === -1) return null;
+
+  cities[index] = {
+    ...cities[index],
+    ...updates,
+    id: cities[index].id,
+  };
+
+  await saveCities(cities);
+  return cities[index];
+}
+
+export async function deleteCity(id: string): Promise<boolean> {
+  const cities = await getCities();
+  const filtered = cities.filter((c) => c.id !== id);
+  if (filtered.length === cities.length) return false;
+  await saveCities(filtered);
+  return true;
+}
+
+export async function addDistrict(cityId: string, name: { en: string; ar: string }): Promise<City | null> {
+  const cities = await getCities();
+  const city = cities.find((c) => c.id === cityId);
+  if (!city) return null;
+
+  const newDistrict: District = {
+    id: `d-${slugify(name.en) || Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+    name: { en: name.en.trim(), ar: name.ar.trim() },
+  };
+
+  city.districts.push(newDistrict);
+  await saveCities(cities);
+  return city;
+}
+
+export async function updateDistrict(
+  cityId: string,
+  districtId: string,
+  name: { en: string; ar: string }
+): Promise<City | null> {
+  const cities = await getCities();
+  const city = cities.find((c) => c.id === cityId);
+  if (!city) return null;
+
+  const district = city.districts.find((d) => d.id === districtId);
+  if (!district) return null;
+
+  district.name = { en: name.en.trim(), ar: name.ar.trim() };
+  await saveCities(cities);
+  return city;
+}
+
+export async function deleteDistrict(cityId: string, districtId: string): Promise<City | null> {
+  const cities = await getCities();
+  const city = cities.find((c) => c.id === cityId);
+  if (!city) return null;
+
+  city.districts = city.districts.filter((d) => d.id !== districtId);
+  await saveCities(cities);
+  return city;
 }

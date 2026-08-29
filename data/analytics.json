@@ -1,6 +1,398 @@
 {
   "records": [
     {
+      "path": "/ar/admin",
+      "referrer": "http://localhost:3000/ar/admin/properties",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788019096806-wi0n3",
+      "timestamp": "2026-08-29T15:58:16.806Z"
+    },
+    {
+      "path": "/ar/admin/locations",
+      "referrer": "http://localhost:3000/ar/admin/properties",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788019051354-x07r9",
+      "timestamp": "2026-08-29T15:57:31.354Z"
+    },
+    {
+      "path": "/ar/admin/properties",
+      "referrer": "http://localhost:3000/ar/admin/properties",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788019046212-4u8cu",
+      "timestamp": "2026-08-29T15:57:26.212Z"
+    },
+    {
+      "path": "/ar/admin/properties",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018935281-k2rrv",
+      "timestamp": "2026-08-29T15:55:35.281Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018934404-gck89",
+      "timestamp": "2026-08-29T15:55:34.405Z"
+    },
+    {
+      "path": "/ar/admin/rental-requests",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018932366-qa0h4",
+      "timestamp": "2026-08-29T15:55:32.366Z"
+    },
+    {
+      "path": "/ar/admin/properties",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018930915-9fo0e",
+      "timestamp": "2026-08-29T15:55:30.915Z"
+    },
+    {
+      "path": "/ar/admin/analytics",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018922985-en54u",
+      "timestamp": "2026-08-29T15:55:22.985Z"
+    },
+    {
+      "path": "/ar/admin/settings",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018919426-mibub",
+      "timestamp": "2026-08-29T15:55:19.426Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018834122-oovg1",
+      "timestamp": "2026-08-29T15:53:54.122Z"
+    },
+    {
+      "path": "/ar/admin/settings",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018826486-26b51",
+      "timestamp": "2026-08-29T15:53:46.486Z"
+    },
+    {
+      "path": "/ar/admin/analytics",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018820490-xcd5c",
+      "timestamp": "2026-08-29T15:53:40.490Z"
+    },
+    {
+      "path": "/ar/admin/rental-requests",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018815951-n3fui",
+      "timestamp": "2026-08-29T15:53:35.951Z"
+    },
+    {
+      "path": "/ar/admin/properties",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018792225-unb1b",
+      "timestamp": "2026-08-29T15:53:12.225Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018788187-szw3c",
+      "timestamp": "2026-08-29T15:53:08.187Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018738241-tq8cx",
+      "timestamp": "2026-08-29T15:52:18.241Z"
+    },
+    {
+      "path": "/ar/properties/prop-1",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018730574-pc27y",
+      "timestamp": "2026-08-29T15:52:10.574Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018402089-pauv8",
+      "timestamp": "2026-08-29T15:46:42.089Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018376788-h3s6w",
+      "timestamp": "2026-08-29T15:46:16.788Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018362605-r38vr",
+      "timestamp": "2026-08-29T15:46:02.605Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018255167-qul6s",
+      "timestamp": "2026-08-29T15:44:15.167Z"
+    },
+    {
+      "path": "/ar/properties",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018254487-dylz6",
+      "timestamp": "2026-08-29T15:44:14.487Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018250133-clefi",
+      "timestamp": "2026-08-29T15:44:10.133Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018242399-ejjsm",
+      "timestamp": "2026-08-29T15:44:02.399Z"
+    },
+    {
+      "path": "/ar/admin/login",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018240310-g5xxj",
+      "timestamp": "2026-08-29T15:44:00.310Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018239516-oudui",
+      "timestamp": "2026-08-29T15:43:59.516Z"
+    },
+    {
+      "path": "/ar/admin/rental-requests",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018224839-qm234",
+      "timestamp": "2026-08-29T15:43:44.839Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018218646-g1t7d",
+      "timestamp": "2026-08-29T15:43:38.646Z"
+    },
+    {
+      "path": "/ar/admin/login",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018190485-pa65i",
+      "timestamp": "2026-08-29T15:43:10.485Z"
+    },
+    {
+      "path": "/ar/admin",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018189381-t0rzk",
+      "timestamp": "2026-08-29T15:43:09.381Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018185378-6azhn",
+      "timestamp": "2026-08-29T15:43:05.378Z"
+    },
+    {
+      "path": "/ar/list-your-property",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018147738-4vs89",
+      "timestamp": "2026-08-29T15:42:27.738Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018143533-1ttg6",
+      "timestamp": "2026-08-29T15:42:23.533Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018120115-i9wla",
+      "timestamp": "2026-08-29T15:42:00.115Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018051867-ect9u",
+      "timestamp": "2026-08-29T15:40:51.867Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788018001567-z268m",
+      "timestamp": "2026-08-29T15:40:01.567Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017947089-dvygh",
+      "timestamp": "2026-08-29T15:39:07.089Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017879221-zpe1k",
+      "timestamp": "2026-08-29T15:37:59.221Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017876796-xbnpz",
+      "timestamp": "2026-08-29T15:37:56.796Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017874105-a808v",
+      "timestamp": "2026-08-29T15:37:54.105Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017870767-wpz86",
+      "timestamp": "2026-08-29T15:37:50.767Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017785402-y19n2",
+      "timestamp": "2026-08-29T15:36:25.402Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017764580-gp6wn",
+      "timestamp": "2026-08-29T15:36:04.580Z"
+    },
+    {
+      "path": "/ar/properties",
+      "referrer": "http://localhost:3000/ar",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017762873-vgsa8",
+      "timestamp": "2026-08-29T15:36:02.873Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017465290-4gtj0",
+      "timestamp": "2026-08-29T15:31:05.290Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017460464-61al2",
+      "timestamp": "2026-08-29T15:31:00.464Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017450833-ipijf",
+      "timestamp": "2026-08-29T15:30:50.833Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017448639-wh84i",
+      "timestamp": "2026-08-29T15:30:48.639Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017446185-su2e2",
+      "timestamp": "2026-08-29T15:30:46.185Z"
+    },
+    {
       "path": "/ar",
       "referrer": "direct",
       "device": "desktop",

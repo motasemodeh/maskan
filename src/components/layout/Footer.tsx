@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Building2, Phone, Mail, MapPin, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { Locale, SiteSettings } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
 import { createTelUrl, createWhatsAppUrl } from '@/lib/utils';
@@ -49,7 +50,7 @@ export function Footer({ locale, dict, settings }: FooterProps) {
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#25D366] text-[#c5a880] hover:text-white flex items-center justify-center transition-colors duration-200"
                 title="WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4" />
               </a>
               <a
                 href={createTelUrl(settings.phone)}
@@ -120,7 +121,7 @@ export function Footer({ locale, dict, settings }: FooterProps) {
                 </a>
               </li>
               <li className="flex items-center gap-3 text-[#a89f91]">
-                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
                 <a
                   href={createWhatsAppUrl(settings.whatsapp, 'Hello')}
                   target="_blank"

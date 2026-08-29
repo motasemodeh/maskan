@@ -118,3 +118,33 @@ export interface PropertyFilterParams {
   search?: string;
   sortBy?: 'newest' | 'price-asc' | 'price-desc' | 'area-desc';
 }
+
+export type RentalRequestStatus = 'new' | 'contacted' | 'archived';
+
+export interface RentalRequest {
+  id: string;
+  fullName: string;
+  phone: string;
+  area: string;
+  district: string;
+  notes?: string;
+  status: RentalRequestStatus;
+  createdAt: string;
+}
+
+export interface District {
+  id: string;
+  name: {
+    en: string;
+    ar: string;
+  };
+}
+
+export interface City {
+  id: string;
+  name: {
+    en: string;
+    ar: string;
+  };
+  districts: District[];
+}

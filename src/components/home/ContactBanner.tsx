@@ -1,4 +1,5 @@
-import { Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Phone, Sparkles } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { Locale, SiteSettings } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
 import { createTelUrl, createWhatsAppUrl } from '@/lib/utils';
@@ -43,7 +44,7 @@ export function ContactBanner({ locale, dict, settings }: ContactBannerProps) {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-bold shadow-lg shadow-[#25D366]/25 transition-all hover:scale-105 w-full sm:w-auto"
             >
-              <MessageCircle className="w-5 h-5 fill-white" />
+              <WhatsAppIcon className="w-5 h-5" />
               <span>{dict.ctaBanner.whatsappBtn}</span>
             </a>
 

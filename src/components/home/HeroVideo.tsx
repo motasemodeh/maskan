@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Play, Pause, Volume2, VolumeX, Search, MapPin, DollarSign, Bed, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Search, MapPin, DollarSign, Bed, Sparkles, ArrowRight, ArrowLeft, Home } from 'lucide-react';
 import { Locale, SiteSettings } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
 
@@ -123,12 +123,13 @@ export function HeroVideo({ locale, dict, settings, availableLocations }: HeroVi
             <span>{dict.hero.ctaExplore}</span>
             <ArrowIcon className="w-4 h-4" />
           </Link>
-          <a
-            href={`#why-us`}
+          <Link
+            href={`/${locale}/list-your-property`}
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all"
           >
+            <Home className="w-4 h-4 text-[#c5a880]" />
             <span>{dict.hero.ctaContact}</span>
-          </a>
+          </Link>
         </div>
 
         {/* Quick Search & Filter Glass Box */}
