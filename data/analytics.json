@@ -1,6 +1,134 @@
 {
   "records": [
     {
+      "path": "/en",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1788017223451-ebx36",
+      "timestamp": "2026-08-29T15:27:03.451Z"
+    },
+    {
+      "path": "/ar",
+      "referrer": "http://localhost:3000/en/admin",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1786829819025-412p4",
+      "timestamp": "2026-08-15T21:36:59.025Z"
+    },
+    {
+      "path": "/en",
+      "referrer": "http://localhost:3000/en/admin",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829805776-cd0qy",
+      "timestamp": "2026-08-15T21:36:45.776Z"
+    },
+    {
+      "path": "/en/admin",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829786707-3ls9w",
+      "timestamp": "2026-08-15T21:36:26.707Z"
+    },
+    {
+      "path": "/en/admin/settings",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829768796-6kidn",
+      "timestamp": "2026-08-15T21:36:08.796Z"
+    },
+    {
+      "path": "/en/admin/analytics",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829763412-r6ajm",
+      "timestamp": "2026-08-15T21:36:03.412Z"
+    },
+    {
+      "path": "/en/admin/properties",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829758678-a3xo8",
+      "timestamp": "2026-08-15T21:35:58.678Z"
+    },
+    {
+      "path": "/en/admin",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829749312-ydh8w",
+      "timestamp": "2026-08-15T21:35:49.312Z"
+    },
+    {
+      "path": "/en/admin/login",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829720044-82zvp",
+      "timestamp": "2026-08-15T21:35:20.044Z"
+    },
+    {
+      "path": "/en/admin",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829719078-7g6eo",
+      "timestamp": "2026-08-15T21:35:19.078Z"
+    },
+    {
+      "path": "/en/properties/prop-1",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829702533-w9nps",
+      "timestamp": "2026-08-15T21:35:02.533Z"
+    },
+    {
+      "path": "/en/properties",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829699867-dkn24",
+      "timestamp": "2026-08-15T21:34:59.867Z"
+    },
+    {
+      "path": "/en",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829669215-c7o1u",
+      "timestamp": "2026-08-15T21:34:29.215Z"
+    },
+    {
+      "path": "/en/properties",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829655956-dwoy2",
+      "timestamp": "2026-08-15T21:34:15.956Z"
+    },
+    {
+      "path": "/en/properties/prop-2",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829644289-r1gbr",
+      "timestamp": "2026-08-15T21:34:04.289Z"
+    },
+    {
+      "path": "/en",
+      "referrer": "http://localhost:3000/en/properties/prop-5",
+      "device": "desktop",
+      "language": "en",
+      "id": "v-1786829640911-uz1vp",
+      "timestamp": "2026-08-15T21:34:00.911Z"
+    },
+    {
       "path": "/en/properties/prop-5",
       "referrer": "http://localhost:3000/en/properties/prop-5",
       "device": "desktop",

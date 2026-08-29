@@ -9,12 +9,12 @@ const ANALYTICS_FILE = path.join(DATA_DIR, 'analytics.json');
 
 const DEFAULT_SETTINGS: SiteSettings = {
   companyName: {
-    en: "Maskan | مسكن",
-    ar: "مسكن | Maskan"
+    en: "Dar & Miftah | دار ومفتاح",
+    ar: "دار ومفتاح | Dar & Miftah"
   },
   phone: "+962 7 9000 0000",
   whatsapp: "+962790000000",
-  email: "leasing@maskan.jo",
+  email: "leasing@darmiftah.jo",
   defaultCurrency: "JOD",
   gaMeasurementId: "G-XXXXXXXXXX",
   address: {

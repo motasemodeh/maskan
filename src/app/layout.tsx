@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Maskan | مسكن - Luxury Apartment & Residence Rentals',
-  description: 'Maskan (مسكن) - Discover luxury apartments and residences for rent in prime locations with verified specifications and dedicated leasing advisory.',
+  title: 'Dar & Miftah | دار ومفتاح - Luxury Apartment & Residence Rentals',
+  description: 'Dar & Miftah (دار ومفتاح) - Discover luxury apartments and residences for rent in prime locations with verified specifications and dedicated leasing advisory.',
 };
 
 export default function RootLayout({
