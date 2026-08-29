@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Building2, Lock, User, ShieldCheck, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Locale } from '@/lib/types';
 import { getDictionary } from '@/locales/dictionary';
@@ -65,8 +66,14 @@ export default function AdminLoginPage({ params }: { params: Promise<{ locale: s
       {/* Top Bar */}
       <div className="max-w-6xl w-full mx-auto flex items-center justify-between z-10">
         <Link href={`/${locale}`} className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#c5a880] to-[#8f6e43] flex items-center justify-center text-white shadow-md">
-            <Building2 className="w-5 h-5" />
+          <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-md bg-white/10 flex items-center justify-center border border-white/15">
+            <Image
+              src="/logo.png"
+              alt={dict.admin.portalTitle}
+              fill
+              sizes="40px"
+              className="object-contain p-1"
+            />
           </div>
           <span className="font-bold text-base font-serif-luxury text-white">
             {dict.admin.portalTitle}

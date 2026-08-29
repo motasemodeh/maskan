@@ -1,11 +1,18 @@
 import Link from 'next/link';
-import { Building2, Home } from 'lucide-react';
+import Image from 'next/image';
+import { Home } from 'lucide-react';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#0c0f12] text-white flex flex-col items-center justify-center p-6 text-center">
-      <div className="w-16 h-16 rounded-3xl bg-[#c5a880]/15 border border-[#c5a880]/30 text-[#c5a880] flex items-center justify-center mb-6">
-        <Building2 className="w-8 h-8" />
+      <div className="relative w-20 h-20 rounded-3xl overflow-hidden bg-white/10 border border-white/15 shadow-xl flex items-center justify-center mb-6">
+        <Image
+          src="/logo.png"
+          alt="Dar & Miftah | دار ومفتاح"
+          fill
+          sizes="80px"
+          className="object-contain p-2"
+        />
       </div>
 
       <span className="text-6xl sm:text-8xl font-black text-[#c5a880] tracking-tighter mb-4 font-serif-luxury">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle, Menu, X, Building2, ShieldCheck } from 'lucide-react';
 import { Locale, SiteSettings } from '@/lib/types';
@@ -60,8 +61,15 @@ export function Header({ locale, dict, settings }: HeaderProps) {
             href={`/${locale}`}
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#c5a880] to-[#8f6e43] flex items-center justify-center shadow-lg shadow-[#c5a880]/20 text-white font-bold text-lg group-hover:scale-105 transition-transform duration-200">
-              <Building2 className="w-5 h-5" />
+            <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl overflow-hidden shadow-lg shadow-[#c5a880]/15 group-hover:scale-105 transition-transform duration-200 bg-white/10 flex items-center justify-center border border-white/15">
+              <Image
+                src="/logo.png"
+                alt={companyName}
+                fill
+                sizes="48px"
+                priority
+                className="object-contain p-1"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-white font-bold text-lg tracking-tight group-hover:text-[#c5a880] transition-colors font-serif-luxury">

@@ -1,6 +1,14 @@
 {
   "records": [
     {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788017245319-5dptm",
+      "timestamp": "2026-08-29T15:27:25.319Z"
+    },
+    {
       "path": "/en",
       "referrer": "direct",
       "device": "desktop",

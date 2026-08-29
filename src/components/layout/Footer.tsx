@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Building2, Phone, Mail, MapPin, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
 import { Locale, SiteSettings } from '@/lib/types';
 import { Dictionary } from '@/locales/dictionary';
@@ -24,8 +25,14 @@ export function Footer({ locale, dict, settings }: FooterProps) {
           {/* Brand Col */}
           <div className="space-y-4">
             <Link href={`/${locale}`} className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#c5a880] to-[#8f6e43] flex items-center justify-center text-white shadow-md">
-                <Building2 className="w-5 h-5" />
+              <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-md bg-white/10 flex items-center justify-center border border-white/15">
+                <Image
+                  src="/logo.png"
+                  alt={companyName}
+                  fill
+                  sizes="40px"
+                  className="object-contain p-1"
+                />
               </div>
               <span className="text-white font-bold text-lg tracking-tight font-serif-luxury">
                 {companyName}
