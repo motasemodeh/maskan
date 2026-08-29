@@ -71,6 +71,7 @@ export function PropertyFormModal({
   const [locationEn, setLocationEn] = useState(initialData?.location?.en || '');
   const [locationAr, setLocationAr] = useState(initialData?.location?.ar || '');
   const [city, setCity] = useState(initialData?.location?.city || '');
+  const [district, setDistrict] = useState(initialData?.location?.district || '');
   const [cities, setCities] = useState<City[]>([]);
 
   // Cities & areas are managed in the admin "Cities & Areas" screen

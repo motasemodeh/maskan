@@ -1,6 +1,14 @@
 {
   "records": [
     {
+      "path": "/ar",
+      "referrer": "direct",
+      "device": "desktop",
+      "language": "ar",
+      "id": "v-1788019717782-aqldx",
+      "timestamp": "2026-08-29T16:08:37.782Z"
+    },
+    {
       "path": "/ar/admin",
       "referrer": "http://localhost:3000/ar/admin/properties",
       "device": "desktop",
